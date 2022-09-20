@@ -1,13 +1,20 @@
 #!/usr/bin/python3
 
-def uppercase(str):
+def to_upper(str):
+
+    new_str = ""
 
     if str == "":
-        return
-    for i in range(len(str)):
-        asci = ord(str[i])
+        return str
+    for character in str:
+        asci = ord(character)
         if (asci >= 97) & (asci <= 122):
-            print("{:c}".format(asci - 32),
-                  end="" if (i < len(str) - 1) else "\n")
+            new_str += chr(asci - 32)
         else:
-            print(str[i], end="" if (i < len(str) - 1) else "\n")
+            new_str += character
+    return new_str
+
+
+def uppercase(str):
+    new_str = to_upper(str)
+    print(new_str)
