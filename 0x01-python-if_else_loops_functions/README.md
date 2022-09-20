@@ -1,6 +1,6 @@
 ## **Description**
 
-This folder contains tasks to test if..else..loops..concepts in C
+This folder contains tasks to test if..else..loops..concepts in Python
 
 ## **Sample question for technical interview preparation**
 ### **Insert in sorted linked list**
