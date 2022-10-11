@@ -5,12 +5,17 @@
 class Square:
     """The square class."""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialises a new square.
 
         Args:
             size (int): These size of the square.
+            position (tuple): Represents coordinates of a square
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
 
     @property
