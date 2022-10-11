@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Creates a class called square"""
+"""Creates a class called square."""
+
 
 class Square:
-    """The square class"""
+    """The square class."""
     pass
