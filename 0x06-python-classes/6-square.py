@@ -12,8 +12,8 @@ class Square:
             size (int): These size of the square.
             position (tuple): Represents coordinates of a square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -39,17 +39,11 @@ class Square:
 
     @property
     def position(self):
-        """A getter to retrive square position.
-
-        Return:
-            position (tuple): coordinates of the square.
-        """
+        """A getter to retrive square position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets the new coordinates of the square"""
-
         if (not isinstance(value, tuple) or
             len(value) != 2 or
             not all(isinstance(num, int) for num in value) or
@@ -58,11 +52,7 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Returns current square area.
-
-        Return:
-            area (int): The current area of the square.
-        """
+        """Returns current area of square"""
         return self.__size * self.__size
 
     def my_print(self):
@@ -75,8 +65,8 @@ class Square:
             print()
 
         for i in range(self.__size):
-            for index in range(self.__position[0]):
+            for j in range(self.__position[0]):
                 print(" ", end="")
-            for j in range(self.__size):
+            for k in range(self.__size):
                 print("#", end="")
             print()
