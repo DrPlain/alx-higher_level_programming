@@ -63,27 +63,6 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
-    def __str__(self):
-        """returns the printable version of a rectangle using #"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        rect = []
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rect.append(str(self.print_symbol))
-            if i != self.__height - 1:
-                rect.append('\n')
-        return ("".join(rect))
-
-    def __repr__(self):
-        """Returns a string representation of the rectangle
-        to be able to recreate a new instance by using eval()"""
-        return f"Rectangle({self.__width}, {self.__height})"
-
-    def __del__(self):
-        print("Bye rectangle...")
-        type(self).number_of_instances -= 1
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
@@ -105,3 +84,24 @@ class Rectangle:
             size(int): The width and height of the rectangle
         """
         return (cls(size, size))
+
+    def __str__(self):
+        """returns the printable version of a rectangle using #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rect = []
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rect.append(str(self.print_symbol))
+            if i != self.__height - 1:
+                rect.append('\n')
+        return ("".join(rect))
+
+    def __repr__(self):
+        """Returns a string representation of the rectangle
+        to be able to recreate a new instance by using eval()"""
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1
