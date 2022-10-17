@@ -17,8 +17,8 @@ class Rectangle:
             ValueError: if width or height is less < 0
         """
 
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def height(self):
