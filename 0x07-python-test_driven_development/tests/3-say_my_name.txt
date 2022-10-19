@@ -1,0 +1,49 @@
+Module name:
+===========
+3-say_my_name
+
+Description:
+============
+Contains the function say_my_name which takes first name as compulsory first argument and last name as optional second argument which must be strings otherwise a TypeError is raised
+
+Import module
+=============
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Tests
+=====
+Valid cases:
+============
+
+1. First name and last name given as strings with capitalised first letters
+
+>>> say_my_name('Gideon', 'Obiasor')
+My name is Gideon Obiasor
+
+2. When both strings are capitalized
+
+>>> say_my_name('EVANS', 'DAN')
+My name is Evans Dan
+
+3. When last name is not given
+
+>>> say_my_name('Angel')
+My name is Angel 
+
+4. Strings with leadind or trailing whitespaces
+>>> say_my_name('  Henry', 'bob   ')
+My name is Henry Bob
+
+Invalid cases
+=============
+6. When argument is not a string
+
+>>> say_my_name(1345, 'Henry')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+7. None type passed as argument
+
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
