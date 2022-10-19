@@ -34,7 +34,7 @@ def matrix_divided(matrix, div):
             raise TypeError("Each row of the matrix must have the same size")
         for ele in row:
             if not isinstance(ele, int) and not isinstance(ele, float):
-                raise TypeError("matrix must be a matrix(list of lists)
-                                of integers/floats")
+                raise TypeError("matrix must be a matrix(list of lists)\
+                        of integers/floats")
         res_matrix.append(list(map(lambda ele: (round(ele / div, 2)), row)))
     return res_matrix
