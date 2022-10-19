@@ -18,6 +18,7 @@ def matrix_divided(matrix, div):
 
     Returns: Returns a new matrix containing the quotients
     """
+    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list) or matrix == []:
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
@@ -34,7 +35,6 @@ def matrix_divided(matrix, div):
             raise TypeError("Each row of the matrix must have the same size")
         for ele in row:
             if not isinstance(ele, int) and not isinstance(ele, float):
-                raise TypeError("matrix must be a matrix(list of lists)\
-                        of integers/floats")
+                raise TypeError(err_msg)
         res_matrix.append(list(map(lambda ele: (round(ele / div, 2)), row)))
     return res_matrix
