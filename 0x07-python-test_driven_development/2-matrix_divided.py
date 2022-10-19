@@ -18,5 +18,20 @@ def matrix_divided(matrix, div):
 
     Returns: Returns a new matrix containing the quotients
     """
-
-    if not isinstance(matrix, [[]])
+    if not isinstance(matrix, list) or matrix == []:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if not isinstance(div, int) and not isinstance(div, float):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+    res_matrix = []
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        if len(row) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+        for ele in row:
+            if not isinstance(ele, int) and not isinstance(ele, float):
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        res_matrix.append(list(map(lambda ele: (round(ele / div, 2)), row)))
+    return res_matrix
