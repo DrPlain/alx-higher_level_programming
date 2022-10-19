@@ -1,0 +1,44 @@
+===========================
+Module name: add_integer.py
+===========================
+
+The module contains a function add_integer() that returns the sum of two integers
+
+Function prototype: add_integer(a, b=98)
+
+Usage
+=====
+Import module
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Just one argument is passed, second argument by default becomes 98
+	>>> add_integer(4)
+	102
+
+Addition of a positive and a negative number
+	>>> add_integer(-4, 10)
+	6
+
+Addition of floating point numbers
+	>>> add_integer(2.5, 2.5)
+	4
+
+When first argument is a string
+	>>> add_integer('a', 10)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+When the second argument is a string
+	>>> add_integer(10, 'b')
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+When no argument is given
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+When none is passed as second argument
+	>>> add_integer('', '')
+	Traceback (most recent call last):
+	TypeError: a must be an integer
