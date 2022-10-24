@@ -1,0 +1,14 @@
+Module Description:
+===================
+Name: 1-my_list 
+contains the class MyList which is a subclass of `list`
+
+import module
+=============
+>>> MyList = __import__('1-my_list').MyList
+
+Test 1
+======
+>>> list_a = MyList([6, 8, 2, 1, 6])
+>>> list_a.print_sorted()
+[1, 2, 6, 6, 8]
