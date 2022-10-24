@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Defines the class MyList"""
+"""
+Defines the class MyList
+"""
 
 
 class MyList(list):
     """A subclass that inherits from list as superclass"""
-
     def __init__(self):
         """initializes the object"""
         super().__init__()
