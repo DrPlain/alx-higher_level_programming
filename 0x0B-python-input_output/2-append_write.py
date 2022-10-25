@@ -5,7 +5,7 @@
 def append_write(filename="", text=""):
     """Appends a string at the end of a text file.
 
-    Args: 
+    Args:
         flename(str): Name of file
         text(str): string to append to file
     """
