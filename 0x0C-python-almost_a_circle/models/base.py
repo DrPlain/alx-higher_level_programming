@@ -36,3 +36,36 @@ class Base:
             else:
                 dict_list = [obj.to_dictionary() for obj in list_objs]
                 jsonfile.write(Base.to_json_string(dict_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation"""
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes set
+
+        Args:
+            **dictionary(dict): key/value pairs of attributes to be assigned to
+            an object"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                obj = cls(4, 5)
+            else:
+                obj = cls(4)
+            obj.update(**dictionary)
+            return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename) as obj:
+                list_dicts = Base.from_json_string(obj.read())
+                return [cls.create(**dic) for dic in list_dicts]
+        except FileNotFoundError:
+            return []
