@@ -21,3 +21,5 @@ if __name__ == "__main__":
             ORDER BY states.id".format(sys.argv[4]))
     states = cursor.fetchall()
     [print(state) for state in states]
+    cursor.close()
+    db.close()
