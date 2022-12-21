@@ -17,6 +17,7 @@ if __name__ == "__main__":
         db=sys.argv[3])
 
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM states ORDER BY states.id')
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' \
+            ORDER BY states.id".format(sys.argv[4]))
     states = cursor.fetchall()
-    [print(state) for state in states if state[1] == sys.argv[4]]
+    [print(state) for state in states]
