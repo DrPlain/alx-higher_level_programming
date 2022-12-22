@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""lists all states with a name starting with N(upper N) from db hbtn_0e_0_usa
-    Usage: ./0-select_states.py <mysql username> \
+"""lists all states where name mathces arg passed from db hbtn_0e_0_usa
+
+    Usage: ./3-my_safe_filter_states.py <mysql username> \
                                 <mysql passwd> \
                                 <database name> \
                                 <state name searched>
