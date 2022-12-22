@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all State objects from the db hbtn_0e_6_usa
+""" Prints the first State objects from the db hbtn_0e_6_usa
 Usage: ./8-model_state_fetch_first.py <mysql username>\
                                     <mysql passwd>\
                                     <database name>

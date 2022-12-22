@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" Lists all State objects from that contain letter 'a'
+""" Prints the State obj with the name passed as argument
 from the db hbtn_0e_6_usa
-Usage: ./9-model_state_filter_a.py <mysql username>\
+Usage: ./10-model_state_my_get.py <mysql username>\
                                     <mysql passwd>\
-                                    <database name>
+                                    <database name>\
+                                    <state name to search>
 """
 
 from sys import argv
@@ -19,8 +20,12 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id)
 
-    for state in states:
-        if 'a' in state.name:
-            print("{}: {}".format(state.id, state.name))
+    found = 0
+    for state in session.query(State):
+        if state.name == argv[4]:
+            print("{}".format(state.id))
+            found = 1
+            break
+    if found == 0:
+        print("Not found")
