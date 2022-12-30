@@ -13,11 +13,13 @@ from relationship_city import Base, City
 from relationship_state import State
 from sys import argv
 
-user = argv[1]
-passwd = argv[2]
-db = argv[3]
 
 if __name__ == "__main__":
+
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
+
     # create database connection
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
