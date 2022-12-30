@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Creates the State California with the city San Francisco
-from the db hbtn_0e_100_usa
+Lists all State objects and corresponding City objects
+conatained in the db hbtn_0e_101_usa
 Usage: ./14-model_city_fetch_by_state.py <mysql username>\
                                          <mysql passwd>\
                                          <database name>
@@ -31,6 +31,6 @@ if __name__ == "__main__":
     for state in states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+            print("    {}: {}".format(city.id, city.name))
 
     session.close()
