@@ -6,6 +6,7 @@ from sqlalchemy import ForeignKey, Column, String, Integer
 from sqlalchemy.orm import relationship
 from relationship_state import Base, State
 
+
 class City(Base):
     """Model class that inherits from Base
 
