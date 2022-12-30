@@ -8,7 +8,6 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
-
 class State(Base):
     """Model class that inherits from Base
 
