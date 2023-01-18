@@ -10,7 +10,7 @@ if __name__ == "__main__":
         payload = {'q': argv[1]}
     else:
         payload = {'q': ""}
-    r = requests.post("http://0.0.0.0:5000/search_user", payload)
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
         res = r.json()
         if res == {}:
