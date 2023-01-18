@@ -3,7 +3,8 @@
 the letter as parameter
 """
 import requests
-fron sys import argv
+from sys import argv
+
 if __name__ == "__main__":
     if argv[1]:
         payload = {'q': argv[1]}
