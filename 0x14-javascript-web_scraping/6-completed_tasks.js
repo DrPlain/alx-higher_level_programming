@@ -9,7 +9,8 @@ request(URL, function (error, response, body) {
   } else if (response.statusCode === 200) {
     const tasks = JSON.parse(body);
     const dict = {};
-    for (let id = 1; id <= 10; id++) {
+    const noUsers = tasks[tasks.length - 1].userId;
+    for (let id = 1; id <= noUsers; id++) {
       let count = 0;
       for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].completed === true && tasks[i].userId === id) {
